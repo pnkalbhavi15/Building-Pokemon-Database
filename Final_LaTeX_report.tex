@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{lipsum} 
+
+\title{GenAI in Database Design}
+\author{Praneetha Praveen Kalbhavi}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+GenAI, an AI language model, played a crucial role in designing a Pokémon database. We explored both SQL and NoSQL approaches to model the data. Let's dive into the technical details and our experiences:
+
+\section{SQL Database Design}
+
+\subsection{Pokémon Table}
+The heart of our SQL schema lies in the Pokémon table. GenAI provided us with SQL queries to create this table. Here's how we structured it:
+
+\begin{itemize}
+    \item \textbf{pokemon\_id} (Primary Key): A unique identifier for each Pokémon.
+    \item \textbf{pokemon\_name}: The name of the Pokémon.
+    \item \textbf{primary\_type}: Represents the primary type of the Pokémon (e.g., Grass, Fire, Water).
+    \item \textbf{secondary\_type} (nullable): Some Pokémon have a secondary type, enhancing their versatility.
+\end{itemize}
+
+\subsection{Types Table}
+To capture the essence of Pokémon types, we created a separate table:
+
+\begin{itemize}
+    \item \textbf{type\_id} (Primary Key): Uniquely identifies each Pokémon type.
+    \item \textbf{type\_name}: Describes the Pokémon type (e.g., Electric, Psychic, Fighting).
+\end{itemize}
+
+\subsection{Moves Table}
+Moves play a pivotal role in Pokémon battles. GenAI's assistance was invaluable in designing this table:
+
+\begin{itemize}
+    \item \textbf{move\_id} (Primary Key): A unique identifier for each move.
+    \item \textbf{move\_name}: The name of the move.
+    \item \textbf{power}: Power value associated with the move.
+    \item \textbf{type\_id} (Foreign Key referencing Types Table): The type of the move.
+\end{itemize}
+
+\section{NoSQL Considerations (Using MongoDB)}
+When discussing NoSQL databases, GenAI emphasized flexibility. We chose MongoDB as our NoSQL solution. Here's how we adapted our design:
+
+\subsection{Pokémon Document}
+Instead of rigid tables, we stored Pokémon and Moves as documents in collections. Each Pokémon document contains information about its types and moves:
+
+\begin{verbatim}
+{
+  "_id": "unique_pokemon_id",
+  "pokemon_name": "Bulbasaur",
+  "types": ["Grass"],
+  "moves": ["Tackle", "Vine Whip", "Return"]
+}
+\end{verbatim}
+
+\subsection{Moves Document}
+Similarly, moves are represented as documents:
+
+\begin{verbatim}
+{
+  "_id": "unique_move_id",
+  "move_name": "Tackle",
+  "power": 35,
+  "type": "Normal"
+}
+\end{verbatim}
+
+\section{Conclusion}
+Our journey with GenAI was enlightening. Its versatility in handling both SQL and NoSQL scenarios made the database design process efficient and insightful.
+
+\end{document}
