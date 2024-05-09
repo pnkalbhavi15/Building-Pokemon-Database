@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Report on Using GenAI for Database Setup}
+\author{Praneetha Praveen Kalbhavi}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This report presents an evaluation of using GenAI, an AI-powered code generation tool, for setting up a database for a simplified Pokemon application. The report discusses how GenAI facilitated the database setup process, its limitations and challenges encountered, and suggestions for improvement.
+
+\section{Methodology}
+The database setup involved creating tables for Pokemon, Type, Move, and managing the many-to-many relationship between Pokemon and Move. GenAI was used to generate code snippets for creating and populating these tables based on the given task requirements.
+
+\section{Results}
+\subsection{Database Setup}
+GenAI generated code snippets for creating and populating the database tables. This included creating tables for Pokemon, Type, Move, and managing the many-to-many relationship between Pokemon and Move.
+
+\subsection{Queries}
+GenAI also provided code snippets for writing MongoDB queries to retrieve data from the database. This included queries to find all Pokemon capable of learning a specific move and moves powerful against a certain type of Pokemon.
+
+\section{Discussion}
+\subsection{How GenAI Helped}
+GenAI significantly expedited the database setup process by generating boilerplate code for table creation and data population. It accurately implemented the database schema based on the task requirements, saving time and effort in manual coding.
+
+Additionally, GenAI generated MongoDB queries, streamlining the process of retrieving relevant data from the database. This automation enhanced productivity and ensured consistent query execution.
+
+\subsection{Limitations and Challenges}
+\begin{enumerate}
+    \item \textbf{Data Generation:} While GenAI assisted in generating code for setting up the database, it initially provided smaller sample data instead of using the specific data provided in the task requirements. Prompting was required to include the task data each time, which resulted in repetitive corrections to ensure the generated code aligned with the task specifications. This process introduced additional manual effort and could be improved for smoother workflow automation.
+    
+    \item \textbf{Connection Steps:} GenAI provided steps for connecting to a local MongoDB instance, but it mixed instructions for using MongoDB on the terminal with those for MongoDB Atlas. This caused confusion and required manual adjustments to follow the correct steps for the chosen database deployment method.
+\end{enumerate}
+
+\section{Conclusion}
+Overall, GenAI proved to be a valuable tool for automating certain aspects of the database setup process. It accelerated the creation of database tables and MongoDB queries, enhancing productivity and reducing manual coding effort. However, limitations such as data generation inaccuracies and mixed connection instructions pose challenges that need to be addressed for improved usability and efficiency.
+
+\end{document}
